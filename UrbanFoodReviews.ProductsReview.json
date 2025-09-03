@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "680ec16f817c674e285dbaf2"
+  },
+  "product": "Chocolate Milk",
+  "userId": "Frank",
+  "rating": 5,
+  "comment": "Very Fresh!"
+},
+{
+  "_id": {
+    "$oid": "680ec195817c674e285dbaf4"
+  },
+  "product": "Tomato",
+  "userId": "Kyle",
+  "rating": 5,
+  "comment": "Really organic"
+},
+{
+  "_id": {
+    "$oid": "680ec1f5817c674e285dbaf6"
+  },
+  "product": "Salad",
+  "userId": "Quinn",
+  "rating": 5,
+  "comment": "Fresh and Delicious!"
+},
+{
+  "_id": {
+    "$oid": "680ec246817c674e285dbaf9"
+  },
+  "product": "Carrots",
+  "userId": "Hannah",
+  "rating": 5,
+  "comment": "Really fresh"
+}]
