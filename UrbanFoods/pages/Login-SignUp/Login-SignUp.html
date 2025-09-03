@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UrbanFoods - Login/Signup</title>
+    <link rel="stylesheet" href="Login-SignUp.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+            <input type="checkbox" class="toggle">
+            <span class="slider"></span>
+            <span class="card-side"></span>
+            <div class="flip-card__inner">
+                <div class="flip-card__front">
+                    <div class="title">Log in</div>
+                    <form class="flip-card__form" id="loginForm">
+                        <input class="flip-card__input" id="loginEmail" name="email" 
+                               placeholder="Email" type="email" required>
+                        <input class="flip-card__input" id="loginPassword" name="password" 
+                               placeholder="Password" type="password" required>
+                        <button type="submit" class="flip-card__btn">Let's go!</button>
+                    </form>
+                </div>
+                
+                <!-- Signup Form -->
+                <div class="flip-card__back">
+                    <div class="title">Sign up</div>
+                    <form class="flip-card__form" id="signupForm">
+                        <input class="flip-card__input" id="signupName" 
+                               placeholder="Name" type="text" required>
+                        <input class="flip-card__input" id="signupEmail" name="email" 
+                               placeholder="Email" type="email" required>
+                        <input class="flip-card__input" id="signupPassword" name="password" 
+                               placeholder="Password" type="password" required>
+                        <button type="submit" class="flip-card__btn">Confirm!</button>
+                    </form>
+                </div>
+            </div>
+            </label>
+        </div>   
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+            }
+
+            const signupForm = document.getElementById('signupForm');
+            if (signupForm) {
+                signupForm.addEventListener('submit', handleSignup);
+            }
+
+            async function handleSignup(e) {
+                e.preventDefault();
+                const userData = {
+                    name: document.getElementById('signupName').value,
+                    email: document.getElementById('signupEmail').value,
+                    password: document.getElementById('signupPassword').value
+                };
+
+                try {
+                    const response = await fetch('http://localhost:8080/api/signup', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(userData)
+                    });
+
+                    const data = await response.json();
+                    if (response.ok) {
+                        alert('Registration successful! Please login.');
+                        document.querySelector('.toggle').click();
+                        signupForm.reset();
+                    } else {
+                        alert(data || 'Registration failed');
+                    }
+                } catch (error) {
+                    alert('Error connecting to server');
+                }
+            }
+
+            async function handleLogin(e) {
+    e.preventDefault();
+    const loginData = {
+        email: document.getElementById('loginEmail').value,
+        password: document.getElementById('loginPassword').value
+    };
+
+    try {
+        const response = await fetch('http://localhost:8080/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(loginData)
+        });
+
+        const data = await response.json();
+        
+        if (response.ok) {
+            localStorage.setItem('user', JSON.stringify(data));
+            window.location.href = '../index.html'; // Redirect to home
+        } else {
+            alert(data.error || data.message || 'Login failed');
+        }
+    } catch (error) {
+        alert('Error connecting to server');
+    }
+}
+        });
+    </script>
+</body>
+</html>

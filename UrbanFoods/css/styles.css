@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=League+Spartan:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto&family=Sen:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=League+Spartan:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto&family=Sen:wght@400..800&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+/* Navbar styles */
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 4vh;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    font-family: "EB Garamond", serif;
+    font-size: 34px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: green;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Button styles */
+.btn-signup, .btn-create {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-signup {
+    background-color: transparent;
+    color: #555;
+}
+
+.btn-signup:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-create {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-create:hover {
+    background-color: #45a049;
+}
+
+/* Active link styling */
+.nav-links a.active {
+    color: #000;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 0.3rem;
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: 40px;
+    background: rgb(73, 155, 73);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "EB Garamond", serif;
+    transition: background 0.3s;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: green;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text-cart,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text-cart {
+    top: 0
+  }
+  
+  .text-cart,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background: green;
+  }
+  
+  .button:hover .text-cart {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+
+  /*-----------------------Sign Up Button--------------------------------------------------------*/
+
+.sign-up-btn {
+    padding: 0.8em 1.8em;
+    border: 2px solid rgb(73, 155, 73);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: rgb(73, 155, 73);
+    height: 36px;
+    padding-bottom: 25px;
+    padding-top: -100px;
+  
+   }
+   
+   .sign-up-btn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: rgb(73, 155, 73);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+
+   }
+   
+   .sign-up-btn:hover::before {
+    width: 105%;
+
+   }
+   
+   .sign-up-btn:hover {
+    color: #111;
+    padding-top: 8;
+   }
+   
+  
+
+
+   .hero-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../Assets/Screenshot\ 2025-04-25\ 120907.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-family: "Cascadia Code", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 2rem;
+  font-family: "Cascadia Code", sans-serif;
+}
+
+.footer-text{
+  color: #000;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  border-bottom: 1px solid #333;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-top h2 {
+  font-family: "Cascadia Code", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.footer-top h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.footer-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-features li {
+  list-style: none;
+  color: black;
+  line-height: 1.6;
+  color: #000;
+}
+
+.footer-features strong {
+  color: black;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-downloads {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-stores {
+  display: flex;
+  gap: 1rem;
+}
+
+.store-link {
+  background-color: black;
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.store-link:hover {
+  background-color: #444;
+}
+
+.payment-methods h4 {
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.payment-types {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.payment-types ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.payment-methods p {
+  color: black;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  width: 100%;
+  border-collapse: collapse;
+  color: black;
+}
+
+.footer-links th,
+.footer-links td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.footer-links th {
+  color: black;
+  font-weight: normal;
+  padding-bottom: 1rem;
+}
+  
+
+.card-social1 {
+  width: fit-content;
+  height: fit-content;
+  background-color: #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.products-tag{
+  margin-left: 80px;
+  margin-top: 70px;
+  font-family: "Cascadia Code", sans-serif;
+  font-size: 30px;
+}
+.products-section{
+  display: flex;
+  gap: 70px;
+  margin-left: 80px;
+  margin-top: 50px;
+}
+.card {
+  position: relative;
+  width: 11.875em;
+  height: 13.5em;
+  box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+  margin-bottom: 50px;
+}
+
+.card::after {
+  content: "Add to Cart";
+  padding-top: 1.25em;
+  padding-left: 1.25em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: #00AC7C;
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.card .title {
+  font-family: "Cascadia Code", sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
+}
+
+.card .price {
+  font-family: Impact, Haettenschweiler, "Cascadia Code", sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+
+.card:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card:active::after {
+  content: "Added !";
+  height: 3.125em;
+}
+
+.text {
+  max-width: 55px;
+}
+
+.image {
+  background: rgb(241, 241, 241);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* -- hero-features container -- */
+.hero-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  flex-wrap: wrap; /* makes it responsive */
+  gap: 1rem;
+  font-family: "Cascadia Code", sans-serif;
+}
+
+/* -- each feature box -- */
+.feature {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #d2a679;
+  margin-bottom: 0.75rem;
+}
+
+/* -- titles and text -- */
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+  text-transform: uppercase;
+}
+
+.feature-text {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Reviews Section Styles */
+.reviews-section {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  font-family: "Cascadia Code", sans-serif;
+}
+
+.reviews-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.review-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.review-rating {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.review-comment {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Scrollbar styling */
+.reviews-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reviews-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.reviews-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.reviews-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

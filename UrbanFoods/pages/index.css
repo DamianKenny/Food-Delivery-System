@@ -1,0 +1,68 @@
+/* Add these card styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.card .image {
+    width: 80%;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.card .title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.card .price {
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Keep existing review styles below */
+.reviews-section {
+    padding: 2rem;
+    background: #f9f9f9;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.review-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.review-message {
+    color: #666;
+    line-height: 1.6;
+}
